@@ -55,7 +55,8 @@ module.exports.getCustomerById = function (id, cb) {
 };
 
 // Add customer
-module.exports.addCustomer = function (cusotmer, cb) {
+module.exports.addCustomer = function (customer, cb) {
+    console.log(customer);
     let add = {
         first_name: customer.first_name,
         last_name: customer.last_name,
@@ -64,13 +65,34 @@ module.exports.addCustomer = function (cusotmer, cb) {
         email: customer.email,
         phone: customer.phone,
         address: {
-            street: customer.street,
-            city: customer.city,
-            state: customer.state,
-            zip: customer.zip
+            street: customer.address.street,
+            city: customer.address.city,
+            state: customer.address.state,
+            zip: customer.address.zip
         }
     };
+    console.log(add.address.street);
     Customer.create(add, cb);
+};
+
+// Update customer
+module.exports.updateCustomer = function (id, customer, options, cb) {
+    let query = {_id: id}
+    let update = {
+        first_name: customer.first_name,
+        last_name: customer.last_name,
+        company: customer.company,
+        logo_url: customer.logo_url,
+        email: customer.email,
+        phone: customer.phone,
+        address: {
+            street: customer.address.street,
+            city: customer.address.city,
+            state: customer.address.state,
+            zip: customer.address.zip
+        }
+    };
+    Customer.findOneAndUpdate(query, update, options, cb);
 };
 
 

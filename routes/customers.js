@@ -10,7 +10,7 @@ const Invoice = require('../models/invoice');
 // Get all customers
 router.get('/', (req, res) => {
     Customer.getCustomers((err, customers) => {
-        if (err) throw (err);
+        if (err) throw err;
 
         res.json(customers);
     });
@@ -20,6 +20,27 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Customer.getCustomerById(req.params.id, (err, customer) => {
         if (err) throw (err);
+
+        res.json(customer);
+    });
+});
+
+// Add customer
+router.post('/', (req, res) => {
+    let customer = req.body;
+    Customer.addCustomer(customer, (err, customer) => {
+        if(err) throw err;
+
+        res.json(customer);
+    });
+});
+
+// Update customer
+router.put('/:id', (req, res) => {
+    let id = req.params.id;
+    let customer = req.body;
+    Customer.updateCustomer(id, customer, {}, (err, customer) => {
+        if (err) throw err;
 
         res.json(customer);
     });

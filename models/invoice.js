@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 // Customer Schema
 const Invoice = mongoose.model('invoice', mongoose.Schema
     ({
-        cusotmer: {
+        customer: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Customer'
         },
@@ -33,11 +33,51 @@ module.exports = Invoice;
 
 // Get Invoices
 module.exports.getInvoices = function (cb, limit) {
-    Invoice.find(cb).limit(limit).sort([['createdAt', 'decending']]);
+    Invoice.find(cb).limit(limit).sort([['createdAt', 'descending']]);
 };
 
 // Get Invoice by id
 module.exports.getInvoiceById = function (id, cb) {
-    Invoice.findById(id, cb).limit(limit);
+    Invoice.findById(id, cb);
 };
+
+// Add invoice
+module.exports.addInvoice = function (invoice, cb) {
+    console.log(invoice);
+    let add = {
+        customer: invoice.customer,
+        service: invoice.service,
+        price: invoice.price,
+        due: invoice.due,
+        status: invoice.status
+    }
+    console.log(add.customer);
+    Invoice.create(add, cb);
+};
+
+// Update invoice
+module.exports.updateInvoice = function (id, invoice, options, cb) {
+    let query = {_id: id};
+    let update = {
+        service: invoice.service,
+        price: invoice.price,
+        due: invoice.due,
+        status: invoice.status
+    };
+    Invoice.findOneAndUpdate(query, update, options, cb);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

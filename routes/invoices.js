@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// Adding new invoice
+// Add new invoice
 router.post('/', (req, res) => {
     let invoice = req.body;
     Invoice.addInvoice(invoice, (err, invoice) => {
@@ -35,11 +35,22 @@ router.post('/', (req, res) => {
     });
 });
 
-// Updating an invoice
+// Update an invoice
 router.put('/:id', (req, res) => {
     let id = req.params.id;
     let invoice = req.body;
     Invoice.updateInvoice(id, invoice, {}, (err, invoice) => {
+        if (err) throw err;
+
+        res.json(invoice);
+    });
+});
+
+// Delete invoice
+router.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    let invoice = req.body;
+    Invoice.removeInvoice(id, (err, invoice) => {
         if (err) throw err;
 
         res.json(invoice);

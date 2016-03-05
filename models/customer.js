@@ -77,7 +77,7 @@ module.exports.addCustomer = function (customer, cb) {
 
 // Update customer
 module.exports.updateCustomer = function (id, customer, options, cb) {
-    let query = {_id: id}
+    let query = {_id: id};
     let update = {
         first_name: customer.first_name,
         last_name: customer.last_name,
@@ -95,7 +95,11 @@ module.exports.updateCustomer = function (id, customer, options, cb) {
     Customer.findOneAndUpdate(query, update, options, cb);
 };
 
-
+// Remove customer
+module.exports.removeCustomer = function (id, cb) {
+    let query = {_id: id};
+    Customer.remove(query, cb);
+};
 
 
 

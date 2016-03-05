@@ -67,6 +67,12 @@ module.exports.updateInvoice = function (id, invoice, options, cb) {
     Invoice.findOneAndUpdate(query, update, options, cb);
 };
 
+// Delete invoice
+module.exports.removeInvoice = function (id, cb) {
+    let query = {_id: id};
+    Invoice.remove(query, cb);
+};
+
 
 
 

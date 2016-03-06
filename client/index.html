@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<html>
+<html ng-app="myApp">
     <head>
         <title>invoiceIt CLient Management</title>
         <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
@@ -35,31 +35,15 @@
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    <h2 class="sub-header">Dashboard</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1,001</td>
-                                    <td>Lorem</td>
-                                    <td>ipsum</td>
-                                    <td>dolor</td>
-                                    <td>sit</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>
+        <script src="/bower_components/jquey/dist/jquery.min.js"></script>
+        <script src="/bower_components/angular/angular.min.js"></script>
+        <script src="/bower_components/angular-route/angular-route.min.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/controllers/dashboard.js"></script>
+        <script src="/controllers/customers.js"></script>
+        <script src="/controllers/invoices.js"></script>
     </body>
 </html>

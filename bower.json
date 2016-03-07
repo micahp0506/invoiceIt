@@ -2,7 +2,7 @@
   "name": "client",
   "homepage": "https://github.com/micahp0506/invoiceIt",
   "description": "",
-  "main": "",
+  "main": "app.js",
   "moduleType": [],
   "license": "MIT",
   "ignore": [

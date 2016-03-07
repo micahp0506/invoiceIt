@@ -3,19 +3,23 @@
 
 const myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.config(['$routeProvider', ($routeProvider) => {
+myApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/', {
             controller: 'DashboardController',
-            templateURL: 'views/dashboard.html'
+            templateUrl: 'views/dashboard.html'
         })
         .when('/customers', {
             controller: 'CustomersController',
-            templateURL: 'views/customers.html'
+            templateUrl: 'views/customers.html'
         })
         .when('/customers/details/:id', {
             controller: 'CustomersController',
-            templateURL: 'views/customer_details.html'
+            templateUrl: 'views/customer_details.html'
+        })
+        .when('/invoices', {
+            controller: 'InvoicesController',
+            templateUrl: 'views/invoices.html'
         })
         .otherwise({
             redirectTo: '/'

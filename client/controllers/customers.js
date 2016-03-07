@@ -1,7 +1,6 @@
 'use strict';
 
-
-myApp.controller('CustomersController', ['$scope', '$http', '$location',($scope, $http, $location) => {
+myApp.controller('CustomersController', ['$scope', '$http', '$location',function ($scope, $http, $location) {
     console.log("Customers Controller loaded.....");
 
     $scope.getCustomers = () => {

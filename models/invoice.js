@@ -33,7 +33,7 @@ module.exports = Invoice;
 
 // Get Invoices
 module.exports.getInvoices = function (cb, limit) {
-    Invoice.find(cb).limit(limit).sort([['createdAt', 'descending']]);
+    Invoice.find(cb).limit(limit).populate('customer').sort([['createdAt', 'descending']]);
 };
 
 // Get Invoice by id

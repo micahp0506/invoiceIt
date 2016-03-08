@@ -56,7 +56,6 @@ module.exports.getCustomerById = function (id, cb) {
 
 // Add customer
 module.exports.addCustomer = function (customer, cb) {
-    console.log(customer);
     let add = {
         first_name: customer.first_name,
         last_name: customer.last_name,

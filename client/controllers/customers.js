@@ -19,6 +19,14 @@ myApp.controller('CustomersController', ['$scope', '$http', '$location', '$route
         });
     };
 
+    // Getting customer invoices from api and sending to the DOM
+    $scope.getCustomerInvoices = () => {
+        let id = $routeParams.id;
+        $http.get('/api/invoices/customer/'+id).success((res) => {
+            $scope.customer_invoices = res;
+        });
+    };
+
     // Adding customer to database, then redirecting to Customers view
     $scope.addCustomer = () => {
         $http.post('/api/customers/', $scope.customer).success(() => {

@@ -12,4 +12,24 @@
             <li class="list-group-item"><strong>Zip: </strong>{{customer.address.zip}}</li>
         </ul>
     <br>
-
+    <h3>Customer Invoices</h3>
+    <table class="table table-striped" ng-init="getCustomerInvoices()">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="invoice in customer_invoices">
+                <td>{{invoice._id}}</td>
+                <td>{{invoice._service}}</td>
+                <td>{{invoice.price}}</td>
+                <td>{{invoice.status}}</td>
+                <td><a href="#/invoices/details/{{invoice._id}}" class="btn btn-primary">Details</a><a href="#/invoices/edit/{{invoice._id}}" class="btn btn-primary">Edit</a><button id="deleteCusotmer" class="btn btn-danger">Delete </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

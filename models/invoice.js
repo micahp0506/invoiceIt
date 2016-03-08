@@ -71,6 +71,11 @@ module.exports.removeInvoice = function (id, cb) {
     Invoice.remove(query, cb);
 };
 
+// Getting the customer's invoices
+module.exports.getCustomerInvoices = function (customer_id, cb, limit) {
+    let query = {customer: customer_id};
+    Invoice.find(query, cb).limit(limit).populate('customer').sort([['createdAt', 'ascending']]);
+};
 
 
 

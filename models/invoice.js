@@ -8,7 +8,7 @@ const Invoice = mongoose.model('invoice', mongoose.Schema
     ({
         customer: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Customer'
+            ref: 'customer'
         },
         service: {
             type: String,
@@ -38,20 +38,18 @@ module.exports.getInvoices = function (cb, limit) {
 
 // Get Invoice by id
 module.exports.getInvoiceById = function (id, cb) {
-    Invoice.findById(id, cb);
+    Invoice.findById(id, cb).populate('customer');
 };
 
 // Add invoice
 module.exports.addInvoice = function (invoice, cb) {
-    console.log(invoice);
     let add = {
-        customer: invoice.customer,
+        customer: invoice.customer_id,
         service: invoice.service,
         price: invoice.price,
         due: invoice.due,
         status: invoice.status
     }
-    console.log(add.customer);
     Invoice.create(add, cb);
 };
 

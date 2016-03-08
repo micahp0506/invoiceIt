@@ -1,0 +1,32 @@
+<h2 class="sub-header">Add Customer</h2>
+<form ng-submit="addInvoice()" ng-init="getCustomers()">
+    <div class="form-group">
+        <label>Service</label>
+        <input type="text" class="form-control" name="service" ng-model="invoice.service" placeholder="Service">
+    </div>
+    <div class="form-group">
+        <label>Customer</label>
+        <select class="form-control" ng-model="invoice.customer_id">
+            <option ng-repeat="customer in customers" value="{{customer._id}}">{{customer.first_name}} {{customer.last_name}} ({{customer.company}})
+            </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="text" class="form-control" name="price" ng-model="invoice.price" placeholder="Price">
+    </div>
+    <div class="form-group">
+        <label>Due Date</label>
+        <input type="text" class="form-control" name="due" ng-model="invoice.due" placeholder="Due Date">
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+        <select class="form-control" ng-model="invoice.status">
+            <option value="Unpaid">Unpaid</option>
+            <option value="Paid">Paid</option>
+            <option value="Overdue">Overdue</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

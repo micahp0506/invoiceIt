@@ -1,12 +1,12 @@
 <div ng-init="getInvoice()">
     <div class="row">
         <div class="col-md-8">
-            <h3>{{invoice.customer.first_name}} {{invoice.customer.last_name}} {{invoice.customer.company}}</h3>
-            <ul clas="list-group">
-                <li class="list-group-itme">{{invoice.customer.address.street}}</li>
-                <li class="list-group-itme">{{invoice.customer.address.city}}</li>
-                <li class="list-group-itme">{{invoice.customer.address.state}}</li>
-                <li class="list-group-itme">{{invoice.customer.address.zip}}</li>
+            <h3>{{invoice.customer.first_name}} {{invoice.customer.last_name}} ({{invoice.customer.company}})</h3>
+            <ul class="list-group">
+                <li class="list-group-item">{{invoice.customer.address.street}}</li>
+                <li class="list-group-item">{{invoice.customer.address.city}}</li>
+                <li class="list-group-item">{{invoice.customer.address.state}}</li>
+                <li class="list-group-item">{{invoice.customer.address.zip}}</li>
             </ul>
         </div>
         <div class="col-md-4">

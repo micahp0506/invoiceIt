@@ -34,5 +34,18 @@ myApp.controller('CustomersController', ['$scope', '$http', '$location', '$route
         });
     };
 
+    // Updating customer in database, then redirecting to Customers view
+    $scope.updateCustomer = () => {
+        $http.put('/api/customers/'+$scope.customer._id, $scope.customer).success(() => {
+            window.location.href='/#customers/';
+        });
+    };
+
+    // Deleting customer in database, then redirecting to Customers view
+    $scope.deleteCustomer = (id) => {
+        $http.delete('/api/customers/'+id).success(() => {
+            window.location.href='/#customers/';
+        });
+    };
 
 }]);

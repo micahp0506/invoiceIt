@@ -16,6 +16,9 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
         let id = $routeParams.id;
         $http.get('/api/invoices/'+id).success((res) => {
             $scope.invoice = res;
+            // Fill Invoice
+            $scope.invoice.customer_id = res.customer._id;
+            $scope.invoice.status = res.invoice.status;
         });
     };
 
@@ -29,6 +32,20 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
     // Adding invoice to database, then redirecting to Invoices view
     $scope.addInvoice = () => {
         $http.post('/api/invoices/', $scope.invoice).success(() => {
+            window.location.href='/#invoices/';
+        });
+    };
+
+    // Updating invoice in database, then redirecting to Invoices view
+    $scope.updateInvoice = () => {
+        $http.put('/api/invoices/'+ $scope.invoice._id, $scope.invoice).success(() => {
+            window.location.href='/#invoices/';
+        });
+    };
+
+    // Deleting invoice in database, then redirecting to Invoices  view
+    $scope.deleteInvoice = (id) => {
+        $http.delete('/api/invoices/'+id).success(() => {
             window.location.href='/#invoices/';
         });
     };

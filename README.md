@@ -20,14 +20,10 @@ In the top-right corner of the page, click Fork.
 In your designated code directory, type:
 
 `git clone https://github.com/Your-Username/invoiceIt`
-
 `cd invoiceIt/`
-
 `npm install`
-
 `bower install`
-
-hs
+`hs`
 ## Usage
 Browse to the i.p. address in the terminal or open with your favorite text editor and you should be ready to start coding.
 ## License

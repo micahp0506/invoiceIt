@@ -19,13 +19,13 @@ In the top-right corner of the page, click Fork.
 
 In your designated code directory, type:
 
-`git clone https://github.com/Your-Username/invoiceIt
+`git clone https://github.com/Your-Username/invoiceIt`
 
-cd invoiceIt/
+`cd invoiceIt/`
 
-npm install
+`npm install`
 
-bower install`
+`bower install`
 
 hs
 ## Usage

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "serve": "nodemon app.js"
+    "serve": "nodemon app.js",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/micahp0506/invoiceIt#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "bower": "^1.7.7",
     "express": "^4.13.4",
     "mongoose": "^4.4.6"
   }

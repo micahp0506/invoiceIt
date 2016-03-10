@@ -9,17 +9,17 @@
 <h1>Download and install:</h1>
 
 <h3>If you don't have NPM yet, from terminal:</h3>
-<p>curl https://npmjs.org/install.sh | sh</p>
+curl https://npmjs.org/install.sh|sh
 
 <h4>In your browser, navigate to the <a href="https://github.com/micahp0506/invoiceIt">repo</a></h4>
 
 <h4>In the top-right corner of the page, click Fork.</h4>
 
-<h4>In your designated code directory, type:
-<p>git clone https://github.com/Your-Username/invoiceIt</p>
-<p>cd invoiceIt/</p>
-<p>npm install</p>
-<p>bower install</p>
-<p>hs</p>
+<h4>In your designated code directory, type:</h4>
+git clone https://github.com/Your-Username/invoiceIt
+cd invoiceIt/
+npm install
+bower install
+hs
 
 <h4>Browse to the i.p. address in the terminal or open with your favorite text editor and you should be ready to start coding.</h4>

@@ -3,6 +3,7 @@
 
 const myApp = angular.module('myApp', ['ngRoute']);
 
+// Routes configs for angular routes
 myApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/', {

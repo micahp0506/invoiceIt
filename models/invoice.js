@@ -3,7 +3,7 @@
 
 const mongoose = require('mongoose');
 
-// Customer Schema
+// Invoice Schema
 const Invoice = mongoose.model('invoice', mongoose.Schema
     ({
         customer: {

@@ -1,6 +1,6 @@
 'use strict';
 
-
+// Requiring necessary modules and dependencies
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
